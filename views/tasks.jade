@@ -1,0 +1,17 @@
+extends master
+
+block content
+    
+    ul(data-bind="foreach: tasks")
+            li
+                span(data-bind="text: title")
+                a(href="#", data-bind="click: $parent.deleteTask") Delete
+                
+        input(type="text", id="newtitle")
+        button(data-bind="click: addNew") Add
+        
+block scriptrefs
+    
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js")
+    script(src="/scripts/tasklistapp.js")
